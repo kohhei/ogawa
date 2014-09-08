@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>小川グループ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/prettyPhoto.css" />
+<link rel="stylesheet" href="css/flexslider.css" />
+<link rel="stylesheet" href="css/custom-styles.css">
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="css/style-ie.css"/>
+<![endif]--> 
+
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- JS
+================================================== -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.custom.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $("#btn-blog-next").click(function () {
+      $('#blogCarousel').carousel('next')
+    });
+     $("#btn-blog-prev").click(function () {
+      $('#blogCarousel').carousel('prev')
+    });
+
+     $("#btn-client-next").click(function () {
+      $('#clientCarousel').carousel('next')
+    });
+     $("#btn-client-prev").click(function () {
+      $('#clientCarousel').carousel('prev')
+    });
+    
+});
+
+ $(window).load(function(){
+
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+    });  
+});
+
+</script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+function initialize() {
+    /*----- 仮の位置を定義 -----*/
+    var latlng = new google.maps.LatLng(34,135);
+ 
+    /*----- ベースマップのオプション定義 -----*/
+  var myOptions  = {
+    zoom: 18,
+    center: new google.maps.LatLng(-33, 151),
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    panControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL
+    },
+    scaleControl: true,
+
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+ 
+    /*----- マップの描画 -----*/
+    var map = new google.maps.Map(document.getElementById('map_basic'), myOptions);
+ 
+    /*----- アイコンのオプション定義 -----*/
+    var markerOptions = {
+        position: latlng,
+        map: map,
+        title: ''
+    };
+ 
+    /*----- マーカー描画 -----*/
+    var marker = new google.maps.Marker(markerOptions);
+ 
+    /*----- ジオコーディングを定義 -----*/
+    var geocoder = new google.maps.Geocoder();
+ 
+    /*----- ジオコーディングを実行 -----*/
+    geocoder.geocode({
+        'address':'東京都文京区小石川一丁目4番6号'
+    },function(results, status){
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            marker.setPosition(results[0].geometry.location);
+        }
+    });
+}
+</script>
+</head>
+<body class="home" onload="initialize()">
+    <!-- Color Bars (above header)-->
+	<div class="color-bar-1"></div>
+    <div class="color-bar-2 color-bg"></div>
+    
+    <div class="container">
+    
+      <div class="row header"><!-- Begin Header -->
+      
+        <!-- Logo
+        ================================================== -->
+        <div class="span5 logo">
+        	<a href="index.htm"><img src="img/logo_org.png" alt="logo" /></a>
+            <h4>不動産事業における　調査　測量　登記　コンサル</h4>
+            <h1>小川グループ</h1>
+        </div>
+        
+        <!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+            
+            <ul class="nav">
+            <li class="dropdown active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.htm">ホーム <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.htm">トップページ</a></li>
+                    <li><a href="occupationlist.htm">業務案内一覧</a></li>
+                    <li><a href="index-gallery.htm">実績一覧</a></li>
+                    <li><a href="index-slider.htm">事務所紹介</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">業務案内 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="page-full-width.htm">土地登記</a></li>
+                    <li><a href="page-right-sidebar.htm">建物登記</a></li>
+                    <li><a href="page-left-sidebar.htm">マンション登記</a></li>
+                    <li><a href="page-double-sidebar.htm">相続などの登記</a></li>
+                    <li><a href="page-double-sidebar.htm">都市再開発　登記・測量</a></li>
+                    <li><a href="page-double-sidebar.htm">マンション建替　登記・測量</a></li>
+                    <li><a href="page-double-sidebar.htm">測量・開発</a></li>
+                    <li><a href="page-double-sidebar.htm">商業登記、企業法務</a></li>
+                    <li><a href="page-double-sidebar.htm">成年後見、訴訟代理</a></li>
+                    <li><a href="page-double-sidebar.htm">土地境界管理</a></li>
+                </ul>
+            </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">実績紹介 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="gallery-3col.htm">都市再開発</a></li>
+                    <li><a href="gallery-4col.htm">マンション建替</a></li>
+                    <li><a href="gallery-6col.htm">開発</a></li>
+                    <li><a href="gallery-4col-circle.htm">特殊</a></li>
+                    <li><a href="gallery-single.htm">物件詳細</a></li>
+                </ul>
+             </li>
+             <li><a href="page-contact.htm">お問い合わせ</a></li>
+            </ul>
+           
+            </div>
+
+            <!-- Mobile Nav
+            ================================================== -->
+            <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">メニュー</option>
+                    <option value="index.htm">ホーム</option>
+                        <option value="occupationlist.htm">- 業務案内一覧</option>
+                        <option value="index-gallery.htm">- 実績一覧</option>
+                        <option value="index-slider.htm">- 事務所紹介</option>
+                    <option value="occupationlist.htm">業務案内</option>
+                        <option value="page-full-width.htm">- 土地登記</option>
+                        <option value="page-right-sidebar.htm">- 建物登記</option>
+                        <option value="page-left-sidebar.htm">- マンション登記</option>
+                        <option value="page-double-sidebar.htm">- 相続などの登記</option>
+                        <option value="page-double-sidebar.htm">- 都市再開発　登記・測量</option>
+                        <option value="page-double-sidebar.htm">- マンション建替　登記・測量</option>
+                        <option value="page-double-sidebar.htm">- 測量・開発</option>
+                        <option value="page-double-sidebar.htm">- 商業登記、企業法務</option>
+                        <option value="page-double-sidebar.htm">- 成年後見、訴訟代理</option>
+                        <option value="page-double-sidebar.htm">- 土地境界管理</option>
+                    <option value="gallery-4col.htm">実績紹介</option>
+                        <option value="gallery-3col.htm">- 都市再開発</option>
+                        <option value="gallery-4col.htm">- マンション建替</option>
+                        <option value="gallery-6col.htm">- 開発</option>
+                        <option value="gallery-4col-circle.htm">- 特殊</option>
+                        <option value="gallery-single.htm">- 物件詳細</option>
+                    <option value="page-contact.htm">お問い合わせ</option>
+                </select>
+                </div>
+                </form>
+
+        </div>
+        
+      </div><!-- End Header -->
+     
+    <div class="row headline"><!-- Begin Headline -->
+    
+     	<!-- Slider Carousel
+        ================================================== -->
+        <div class="span8">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-2.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-3.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-4.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-5.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-6.jpg" alt="slider" /></a></li>
+              </ul>
+            </div>
+        </div>
+        
+        <!-- Headline Text
+        ================================================== -->
+        <div class="span4">
+        	<h3>基礎調査から権利の保全までワンストップ型不動産登記</h3>
+            <p>昭和63年（西暦1988年）土地家屋調査士事務所として創業以来、土地及び建物に関わる登記手続等の専門家として多くのお客様の支援と信頼を頂いてまいりました。不動産事業における調査、測量、登記、コンサルにつき一体的にワンストップサービスを進めているところです。</p>
+			<p>特に「都市の再生、住宅の再生」との視点で都市再開発事業、大型団地を含むマンション建替え事業、測量及び開発行為の許認可業務を中心に、正確且つスピーディにお客様に対し、高度な専門家集団としてあらゆるテーマに対し総合的なサービスをご提供させて頂ける事が「お客様の安心と笑顔」に繋がるものと確信しています。</p>
+            <p>常日頃からグループ全員がお客様からのご相談を頂ける事を喜びと考えており、頂いたテーマに対して調査、コンサル、土地建物調査測量、表題登記、権利登記と一貫した流れに沿ってご提案できる事が私共にとって喜びです。</p>
+        </div>
+    </div><!-- End Headline -->
+    
+    
+        
+    
+    </div> <!-- End Container -->
+
+    <!-- Footer Area
+        ================================================== -->
+
+	<div class="footer-container"><!-- Begin Footer -->
+    	<div class="container">
+        	<div class="row footer-row">
+                <div class="span3 footer-col">
+                    <h5>小川グループ</h5>
+                   <img src="img/logo_org.png" alt="logo" /><br /><br />
+                    <address>
+                        <strong>WEBページ問合せ窓口</strong><br />
+                        〒112-0002 東京都文京区<br />
+                        小石川一丁目4番6号 TK小石川ビル5F<br />
+                        総務課 WEB担当係<br />
+                        <a href="mailto:info@ogawagroup.co.jp">お問合せメール</a>
+                    </address>
+                    <ul class="social-icons">
+                        <li><a href="#" class="social-icon facebook"></a></li>
+                        <li><a href="#" class="social-icon twitter"></a></li>
+                        <li><a href="#" class="social-icon rss"></a></li>
+                        <li><a href="#" class="social-icon forrst"></a></li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>所在</h5>
+                    <div id="map_basic" style="width: 400px; height: 300px;"></div>
+                </div>
+                <div class="span3 footer-col">
+                </div>
+                <div class="span3 footer-col">
+                    <h5>実績写真</h5>
+                    <ul class="img-feed">
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img.jpg" alt="Image Feed"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">Copyright 2014 OgawaGroup inc. All Rights Reserved.</span></div>
+                        <div class="span6">
+                            <span class="right">
+                            <a href="#">ホーム</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">業務案内</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">実績紹介</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">お問合せ</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+
+        </div>
+    </div><!-- End Footer --> 
+    
+    <!-- Scroll to Top -->  
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+    
+</body>
+</html>
